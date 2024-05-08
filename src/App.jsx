@@ -1,4 +1,4 @@
-import Tasker from "./components/tast/Tasker";
+import Tasker from "./components/tasker/Tasker";
 
 export default function App() {
   return (
