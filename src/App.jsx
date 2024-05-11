@@ -1,10 +1,10 @@
-import Tasker from "./components/tasker/Tasker";
+import React from 'react'
+import CountryList from './components/CountryList'
 
 export default function App() {
   return (
-    <div className="bg-slate-900 min-h-[100vh] pt-10">
-
-      <Tasker />
+    <div className='min-h-screen bg-slate-800 text-white'>
+      <CountryList/>
     </div>
   )
 }
