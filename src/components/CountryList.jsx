@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
-import fetchData from "../utils/fetchData"
 import Country from "./Country"
+import axios from "axios"
 
 export default function CountryList() {
     const [country, setCountry] = useState([])
     const fetchCountries = async () => {
         try {
-            const countries = await fetchData(`https://restcountries.com/v3.1/all`)
-            setCountry(countries)
+            const res = await axios.get(`https://restcountries.com/v3.1/all`)
+            setCountry(res.data)
         } catch (error) {
             throw new Error(error)
         }
@@ -22,7 +22,7 @@ export default function CountryList() {
             <section className="grid grid-cols-3 mx-5">
                 {
                     country.map((country, idx) => {
-                        
+
                         return <Country key={idx} country={country} />
                     })
                 }
