@@ -13,3 +13,16 @@ export const countryLoader = async ({ params: { countryCca3Code } }) => {
     }
 
 }
+
+export const allCountryLoader = async () =>{
+    try {
+        const res = await axios.get(`https://restcountries.com/v3.1/all`)
+        const result = res?.data
+        // console.log("SUCCESSFULLY Fetch Data")
+        return result
+    } catch (e) {
+        console.log(e)
+        return []
+        throw new Error(error)
+    }
+}
